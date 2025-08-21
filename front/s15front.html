@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> CyberShield Pro </title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .card {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 20px;
+      background-color: #ffffffee;
+      padding: 0; /* padding será interno nos elementos */
+      border-radius: 15px;
+      max-width: 900px;
+      width: 100%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    /* Imagem de destaque */
+    .header-image img {
+      width: 100%;
+      border-radius: 15px 15px 0 0;
+      object-fit: cover;
+      max-height: 200px;
+      transition: transform 0.3s;
+    }
+
+    .header-image img:hover {
+      transform: scale(1.02);
+    }
+
+    .header {
+      background: linear-gradient(90deg, #26165b, #2c0378);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.6rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      padding: 20px 30px;
+      animation: fadeIn 0.8s ease-in;
+    }
+
+    .event-info, .form-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    p, label {
+      margin-bottom: 12px;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    input {
+      padding: 12px;
+      margin-bottom: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      width: 100%;
+      transition: all 0.3s;
+    }
+
+    input:focus {
+      border-color: #2c0378;
+      box-shadow: 0 0 8px rgba(0, 178, 238, 0.4);
+      outline: none;
+    }
+
+    input.valid {
+      border-color: #2c0378;
+    }
+
+    input.invalid {
+      border-color: #e53935;
+      box-shadow: 0 0 8px rgba(229,57,53,0.4);
+    }
+
+    .error-msg {
+      font-size: 0.85rem;
+      color: #e53935;
+      margin-bottom: 10px;
+      display: none;
+    }
+
+    button {
+      background: linear-gradient(90deg, #2c0378, #26165b);
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #2c0378, #26165b);
+      transform: scale(1.05);
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #033df9;
+      padding: 10px;
+    }
+
+    .success-message {
+      display: none;
+      background-color: #0800f8;
+      color: #ffffff;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 10px;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header {
+        font-size: 1.3rem;
+        padding: 15px;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+      }
+
+      input, button {
+        font-size: 0.95rem;
+        padding: 12px;
+      }
+    }
+
+    /* Animações */
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Imagem de destaque -->
+    <div class="header-image">
+      <img src="imagens/download (1).jfif" alt=" CyberShield " />
+    </div>
+
+    <div class="header"> CyberShield 2025</div>
+
+    <div class="content">
+      <div class="event-info">
+        <h2>Sobre o Evento</h2>
+        <p><strong>Tema:</strong> CyberShield Pro </p>
+  
+        <p><strong>Data:</strong> 20 de Outubro de 2025</p>
+        <p><strong>Dono Da Empresa :</strong> Lucas Ferreira  
+          especialista em segurança da informação e fundador do site </p>
+          <h4>Objetivo</h4>
+        <p> Oferecer informações, ferramentas e serviços acessíveis para proteger pequenas empresas contra ameaças digitais, como vírus, golpes e ataques cibernéticos..</p>
+      </div>
+
+      <div class="form-container">
+        <h2>Inscreva-se</h2>
+        <form id="registrationForm" novalidate>
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" placeholder="Nome completo" required>
+          <div class="error-msg" id="nome-error">Por favor, insira seu nome.</div>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Email" required>
+          <div class="error-msg" id="email-error">Insira um email válido.</div>
+
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" placeholder="Telefone">
+          <div class="error-msg" id="telefone-error">Insira um telefone válido.</div>
+
+          <button type="submit">Enviar Cadastro</button>
+          <div class="success-message" id="success-msg">Cadastro enviado com sucesso! 🎉</div>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer">© 2025 CyberShield </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    const nome = document.getElementById('nome');
+    const email = document.getElementById('email');
+    const telefone = document.getElementById('telefone');
+    const successMsg = document.getElementById('success-msg');
+
+    function validateEmail(email) {
+      const re = /\S+@\S+\.\S+/;
+      return re.test(email);
+    }
+
+    function validatePhone(phone) {
+      return phone === '' || /^[0-9\s\-\(\)]+$/.test(phone);
+    }
+
+    function showError(input, messageId) {
+      input.classList.add('invalid');
+      input.classList.remove('valid');
+      document.getElementById(messageId).style.display = 'block';
+    }
+
+    function showValid(input, messageId) {
+      input.classList.add('valid');
+      input.classList.remove('invalid');
+      document.getElementById(messageId).style.display = 'none';
+    }
+
+    nome.addEventListener('input', () => {
+      if (nome.value.trim() === '') showError(nome, 'nome-error');
+      else showValid(nome, 'nome-error');
+    });
+
+    email.addEventListener('input', () => {
+      if (!validateEmail(email.value)) showError(email, 'email-error');
+      else showValid(email, 'email-error');
+    });
+
+    telefone.addEventListener('input', () => {
+      if (!validatePhone(telefone.value)) showError(telefone, 'telefone-error');
+      else showValid(telefone, 'telefone-error');
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      let valid = true;
+
+      if (nome.value.trim() === '') { showError(nome, 'nome-error'); valid = false; }
+      if (!validateEmail(email.value)) { showError(email, 'email-error'); valid = false; }
+      if (!validatePhone(telefone.value)) { showError(telefone, 'telefone-error'); valid = false; }
+
+      if (valid) {
+        successMsg.style.display = 'block';
+        form.reset();
+        nome.classList.remove('valid');
+        email.classList.remove('valid');
+        telefone.classList.remove('valid');
+        setTimeout(() => { successMsg.style.display = 'none'; }, 4000);
+      }
+    });
+  </script>
+</body>
+</html>
+<!-- Vitor Dos Santos Fabiano -->
